@@ -1,0 +1,42 @@
+{
+  "name": "cryptocurrencies",
+  "version": "1.0.6",    
+  "description": "Digital signage of Cryptocurrencies",
+  "main": "index_bundled.js",
+  "scripts": {
+    "webpack:client:dev": "webpack --config webpack.client.js --env.mode=development",
+    "webpack:client:build": "webpack --config webpack.client.js --env.mode=production",
+    "webpack:server:dev": "webpack --config webpack.server.js --env.mode=development",
+    "webpack:server:build": "webpack --config webpack.server.js --env.mode=production",
+    "serve:dev": "node index_bundled.js dev",
+    "serve:build": "node index_bundled.js",
+    "dev": "concurrently \"npm run webpack:server:dev && npm run serve:dev\" \"npm run webpack:client:dev\"",
+    "build": "npm run webpack:client:build && npm run webpack:server:build",
+    "start": "npm run serve:build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "7.1.0",
+    "@babel/core": "7.1.0",
+    "@babel/preset-env": "7.1.0",
+    "@babel/preset-react": "7.0.0",
+    "axios": "0.18.0",
+    "babel-loader": "8.0.2",
+    "emotion": "9.2.8",
+    "express": "4.16.3",
+    "react": "16.5.0",
+    "react-dom": "16.5.0",
+    "react-emotion": "9.2.8"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "css-loader": "1.0.0",
+    "file-loader": "2.0.0",
+    "html-webpack-plugin": "3.2.0",
+    "style-loader": "0.23.0",
+    "webpack": "4.17.2",
+    "webpack-cli": "3.1.0"
+  }
+}
